@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dompet 50Jt — Service Worker
+   Dompet A&A — Service Worker
 
    Tugasnya cuma dua: menyimpan cangkang aplikasi supaya bisa dibuka saat
    luring, dan menampilkan pengingat harian bila browser mendukung Periodic
@@ -94,7 +94,7 @@ self.addEventListener("fetch", event => {
         caches.match(req).then(hit =>
           hit || caches.match("./index.html").then(idx =>
             idx || caches.match("./") || new Response(
-              "<h1>Dompet 50Jt</h1><p>Belum ada salinan luring. Buka sekali dalam keadaan daring lebih dulu.</p>",
+              "<h1>Dompet A&amp;A</h1><p>Belum ada salinan luring. Buka sekali dalam keadaan daring lebih dulu.</p>",
               {headers:{"Content-Type":"text/html; charset=utf-8"}}
             )
           )
@@ -195,7 +195,7 @@ function dailyCheck(){
     if(rec.lastExpenseDate === today) return null;           // sudah ada catatan hari ini
     if(new Date().getHours() < (rec.hour || 20)) return null; // belum waktunya
 
-    return self.registration.showNotification(rec.title || "Dompet 50Jt", {
+    return self.registration.showNotification(rec.title || "Dompet A&A", {
       body: rec.body || "Catat pengeluaran hari ini.",
       tag: "dompet-daily-" + today,
       icon: "./icon-192.png",

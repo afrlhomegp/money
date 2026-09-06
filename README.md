@@ -1,6 +1,7 @@
-# Dompet 50Jt — versi PWA
+# Dompet A&A — versi PWA
 
-Upgrade dari `dompet-50jt.html` yang sudah ada. Seluruh fitur, rumus, tampilan,
+Upgrade dari `dompet-50jt.html` yang sudah ada. Nama tampilan dan monogram
+diganti jadi **Dompet A&A**, tapi kunci penyimpanan sengaja TIDAK ikut berubah. Seluruh fitur, rumus, tampilan,
 dan data lama dipertahankan. Yang ditambahkan: PWA (bisa di-install, jalan
 luring) dan sistem notifikasi keuangan.
 
@@ -38,7 +39,7 @@ menampilkan status `Perlu https` apa adanya.
 
 ## Data
 
-- Kunci `dompet50jt:data` tidak berubah sama sekali. Transaksi, budget,
+- Kunci `dompet50jt:data` tidak berubah sama sekali, termasuk setelah ganti nama aplikasi. Transaksi, budget,
   target, recurring, salary, savings, dan settings lama terbaca apa adanya.
 - Versi skema naik ke 3. `Store.migrate()` menggabung per-field, jadi berkas
   cadangan lama (tanpa blok notifikasi) tetap bisa diimpor. Tidak ada reset.
@@ -99,7 +100,7 @@ milestone-nya.
 
 ## Hasil pengujian
 
-132 assertion lewat jsdom, semuanya lolos: migrasi data v2 → v3, keenam layar
+147 assertion lewat jsdom, semuanya lolos: migrasi data v2 → v3, keenam layar
 render, transaksi lama tetap muncul, tambah transaksi lewat sheet, edit budget,
 pencarian, dark mode, ekspor/impor, reset, manifest, badge, pusat notifikasi,
 tiap aturan notifikasi, dan anti-spam (10× pemeriksaan berturut-turut tidak
